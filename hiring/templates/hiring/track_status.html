@@ -1,0 +1,9 @@
+{% extends 'hiring/base.html' %} {% block content %}
+<h2>Track Status</h2>
+<h3>{{candidate.applicant_name}}</h3>
+<p>
+  Submitted at: {{submit_status.event_time}} ==> Reviewed at:
+  {{review_status.event_time}} ==> Interviewed at:
+  {{interview_status.event_time}} ==> Hired at: {{hire_status.event_time}}
+</p>
+{%endblock %}

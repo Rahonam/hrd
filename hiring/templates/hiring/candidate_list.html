@@ -1,0 +1,21 @@
+{% extends 'hiring/base.html' %} {% load static %} {% block content %}
+<h2>Candidate List</h2>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>S.No.</th>
+    <th>Applicant Name</th>
+    <th>Status</th>
+    <th>Track Status</th>
+  </tr>
+  {% for c in candidates %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ c.applicant_name }}</td>
+    <td>{{ c.status }}</td>
+    <td><a href="{% url 'track_status' c.pk %}">View</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
